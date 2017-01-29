@@ -8,7 +8,7 @@
     "express": "^1.0",
     "request": "^1.0",
     "moment": "^1.0",
-    "consolidate": "^1.0"
+    "consolidate": "latest"
   },
   "devDependencies": {},
   "scripts": {
