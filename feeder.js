@@ -2,7 +2,7 @@ var weather = require('weather-js');
 var express = require('express');
 var news = require('request');
 var app = express();
-var time = require('time');
+var time = require('node-time');
 
 var engines = require('consolidate');
 
