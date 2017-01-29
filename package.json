@@ -4,10 +4,10 @@
   "description": "",
   "main": "feeder.js",
   "dependencies": {
-    "weather-js": "^1.0",
-    "express": "^1.0",
-    "request": "^1.0",
-    "moment": "^1.0",
+    "weather-js": "latest",
+    "express": "latest",
+    "request": "latest",
+    "moment": "latest",
     "consolidate": "latest"
   },
   "devDependencies": {},
