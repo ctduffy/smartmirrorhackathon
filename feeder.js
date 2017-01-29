@@ -1,10 +1,10 @@
 var weather = require('weather-js');
 var express = require('express');
 var news = require('request');
-var app = express();
-var time = require('node-time');
-
+var time = require('time');
 var engines = require('consolidate');
+
+var app = express();
 
 app.engine('html', engines.hogan); // tell Express to run .html files through Hogan
 app.set('views', __dirname + '/templates'); // tell Express where to find templates

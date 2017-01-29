@@ -2,11 +2,13 @@
   "name": "smartmirror",
   "version": "1.0.0",
   "description": "",
-  "main": "forcefeed.js",
+  "main": "feeder.js",
   "dependencies": {
-    "weather": "^0.1.0",
-    "xmlhttprequest": "^1.8.0",
-    "request": "^2.79.0"
+    "weather-js": "^0",
+    "express": "^0",
+    "request": "^0",
+    "time": "^0",
+    "consolidate": "^0"
   },
   "devDependencies": {},
   "scripts": {
