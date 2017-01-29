@@ -1,7 +1,7 @@
 var weather = require('weather-js');
 var express = require('express');
 var news = require('request');
-var time = require('time');
+var moment = require('moment');
 var engines = require('consolidate');
 
 var app = express();
@@ -12,21 +12,11 @@ app.set('views', __dirname + '/templates'); // tell Express where to find templa
 // allow requests to JS/CSS files in local public/ directory
 app.use(express.static(__dirname));
 
-var now = new time.Date();
- 
-now.setTimezone("America/New_York");
-
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
 	var headliner = '';
 	var temp;
-	var hours = now.getHours();
-	var minutes = now.getMinutes();
-
-	if(hours > 12){
-		hours = hours - 12;
-	}
-
+	var time = moment().format('LT');
 
 	weather.find({search: "Charlottesville, VA", degreeType: 'F'}, function(err, result) {
 		var pic = result[0].current.imageUrl;
@@ -43,7 +33,7 @@ app.get('/', function (req, res) {
 						headliner = headliner.concat(body.articles[i].title);
 						headliner = headliner.concat('  •  ');
 					}
-			  		res.render("index.html", {headline: headliner, pic: pic, high: high, low: low, hour: hours, minute: minutes, message: 'Good Evening'}); //mustache
+			  		res.render("index.html", {headline: headliner, pic: pic, high: high, low: low, time: time, message: 'Good Evening'}); //mustache
 				}
 			})
 
