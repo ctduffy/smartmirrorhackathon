@@ -30,9 +30,13 @@ app.get('/', function (req, res) {
 					body = JSON.parse(body);
 
 					for (var i = 0; i < body.articles.length; i++){
-						headliner = headliner.concat(body.articles[i].title);
+						var randomIndex = Math.floor(Math.random() * (body.articles.length-1));
+						console.log(randomIndex);
+						var randomString = body.articles[randomIndex].title;
+						headliner = headliner.concat(randomString);
 						headliner = headliner.concat('  •  ');
 					}
+
 			  		res.render("index.html", {headline: headliner, pic: pic, high: high, low: low, time: time, message: 'Good Evening'}); //mustache
 				}
 			})
